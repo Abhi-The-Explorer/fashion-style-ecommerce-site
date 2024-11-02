@@ -186,91 +186,94 @@
 <!-- shipping ads end -->
  
 <!-- Product Display -->
-<div class="product-area pb-60">
-    <div class="container">
-        <div class="section-title text-center">
-            <h2>DAILY DEALS!</h2>
-        </div>
-        <br>
+            <div class="product-area pb-60">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <h2>DAILY DEALS!</h2>
+                    </div>
+                    <br>
+    <!-- Data Display -->
+            <div class="tab-content jump">
+                <div class="tab-pane active" id="product-1">
+                    <div class="row">
+                        @foreach($products as $product)
+                            <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
+                                <div class="product-wrap mb-25">
 
-        <!-- Data Display -->
-        <div class="tab-content jump">
-            <div class="tab-pane active" id="product-1">
-                <div class="row">
-                    @foreach($products as $product)
-                        <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                            <div class="product-wrap mb-25">
-
-                            <div class="product-img">
-                            <div class="product-img">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#quickViewModal{{ $product->id }}">
-                                    <img class="default-img" src="{{ asset('uploads/' . $product->image) }}" alt="" style="min-width: 200px; min-height: 200px; height: auto; border-radius:5px;">
-                                    <img class="hover-img" src="{{ asset('uploads/' . $product->image) }}" alt="" style="min-width: 200px; min-height: 200px; height: auto;">
-                                </a>
-                            </div>
-                                    <span class="pink">
-                                        <h6>{{ $product->category }}</h6>
-                                    </span>
-                                    <div class="product-action">
-
-                                    <!-- add to cart -->
-                                    <div class="pro-same-action pro-cart cartdesign">
-                                    <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
-                                        @csrf
-                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <input type="hidden" name="quantity" value="1">
-                                        <a title="Add To Cart" href="javascript:void(0);" onclick="this.closest('form').submit();">
-                                            <i class="pe-7s-cart"></i> Add to cart
-                                        </a>
-                                    </form>
+                                <div class="product-img">
+                                <div class="product-img">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quickViewModal{{ $product->id }}">
+                                        <img class="default-img" src="{{ asset('uploads/' . $product->image) }}" alt="" style="min-width: 200px; min-height: 200px; height: auto; border-radius:5px; " loading="lazy">
+                                        <img class="hover-img" src="{{ asset('uploads/' . $product->image) }}" alt="" style="min-width: 200px; min-height: 200px; height: auto;" loading="lazy">
+                                    </a>
                                 </div>
+                                        <span class="pink">
+                                            <h6>{{ $product->category }}</h6>
+                                        </span>
+                                        <div class="product-action">
 
-                                    <!-- add to cart  end-->
+                                        <!-- add to cart -->
+                                        <div class="pro-same-action pro-cart cartdesign">
+                                        <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <a title="Add To Cart" href="javascript:void(0);" onclick="this.closest('form').submit();">
+                                                <i class="pe-7s-cart"></i> Add to cart
+                                            </a>
+                                        </form>
+                                    </div>
+
+                                        <!-- add to cart  end-->
 
 
 
-                                        <div class="pro-same-action pro-quickview">
-                                            <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#quickViewModal{{ $product->id }}"><i class="pe-7s-look"></i></a>
+                                            <div class="pro-same-action pro-quickview">
+                                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#quickViewModal{{ $product->id }}"><i class="pe-7s-look"></i></a>
+                                            </div>
+
+                                            <div class="pro-same-action pro-quickview">
+                                            <a title="View Cart" href="#" style="display: inline-block;  margin-left: 10px; margin-right: 2px; font-size: 24px;">
+                                                <i class="pe-7s-cart" style="font-size: 24px;"></i>
+                                            </a>
                                         </div>
 
-                                        <div class="pro-same-action pro-quickview">
-                                        <a title="View Cart" href="#" style="display: inline-block;  margin-left: 10px; margin-right: 2px; font-size: 24px;">
-                                            <i class="pe-7s-cart" style="font-size: 24px;"></i>
-                                        </a>
+
+                                            
+                                        </div>
+                                    </div>
+
+                                        <div class="product-content text-center">
+                                        <h3>{{ $product->name }}</h3>
+
+                                        <div class="product-price">
+                                        <span>&#8377;{{ $product->price }}</span>
                                     </div>
 
 
-                                        
                                     </div>
-                                </div>
-
-                                    <div class="product-content text-center">
-                                    <h3>{{ $product->name }}</h3>
-
-                                    <div class="product-price">
-                                    <span>&#8377;{{ $product->price }}</span>
-                                </div>
-
-
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
 
-                <div class="pagination">
-                    {{ $products->links() }}
+                    <div class="pagination">
+                        {{ $products->links() }}
+                    </div>
                 </div>
             </div>
+    <!-- Data Display End -->
+
+
+
+    
         </div>
-        <!-- Data Display End -->
-    </div>
-</div>
+        </div>
 
 
-<!-- our blog -->
+   <!-- our blog -->
 
-<div class="blog-area pb-55">
+  <div class="blog-area pb-55">
     <div class="container">
         <div class="section-title text-center mb-55">
             <h2>OUR BLOG</h2>

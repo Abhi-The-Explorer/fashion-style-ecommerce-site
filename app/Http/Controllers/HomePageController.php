@@ -43,6 +43,17 @@ class HomePageController extends Controller
     }
     
     
+
+    public function ProductsIndex()
+    {
+        $products = Product::paginate(9); // Adjust the number as needed
+    
+        // Get unique categories from the products table
+        $categories = Product::select('category')->distinct()->get();
+    
+        return view('frontend.shop', compact('products', 'categories'));
+    }
+    
    
     
 

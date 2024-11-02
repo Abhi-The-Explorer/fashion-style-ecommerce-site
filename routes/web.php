@@ -180,6 +180,8 @@ Route::get('/users{id}', 'UsersController@show')->name('users.show');
 
 
 Route::get('/home', 'HomePageController@index')->name('home');
+Route::get('/home', 'HomePageController@index')->name('home');
+Route::get('/shop', 'HomePageController@ProductsIndex')->name('products.shop');
 
 
 
