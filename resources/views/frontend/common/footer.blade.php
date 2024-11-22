@@ -1,93 +1,52 @@
-<footer class="footer-area bg-gray pt-100 pb-70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-4">
-                <div class="copyright mb-30">
+<footer style="padding: 20px 0; font-family: Arial, sans-serif; text-align: center;">
+    
+    <div style=" background-color: #f0f0f0;">
+    <a href=""><br><br><br></a>
+    </div>
 
-                <!-- footer webiste logo -->
-                  
-                <!-- footer logo end -->
 
-                <!-- copyright msg -->
-                     <a href="#"><img src="{{ asset('storage/' . $siteSettings['logo']->value) }}" style="width: 200px; margin-left:-23px; height: 190px; margin-top: -30px; margin-bottom: -65px;"> <!-- Use the header logo -->
-                    </a>.<br> <p>© {{ $siteSettings['copyright']->value ?? 'No details found' }}</p>
-                <!-- copyright msg end -->
-
-                <!-- footer contact no -->
-                <h4 style="font-size: 90%; margin-bottom:-5px;">Mobile No:</h4>                    
-                    <h>  {{ $siteSettings['mobile_no']->value ?? 'No contact number available' }}</h5>
-                <!-- contactno end  -->
-
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4">
-                <div class="footer-widget mb-30 ml-30">
-                    <div class="footer-title">
-                        <h3>ABOUT US</h3>
-                    </div>
-                    <div class="footer-list">
-                        <ul>
-                            <li><a href="about.blade.php">About us</a></li>
-                            <li><a href="#">Store location</a></li>
-                            <li><a href="contact.blade.php">Contact</a></li>
-                            <li><a href="#">Orders tracking</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4">
-                <div class="footer-widget mb-30 ml-50">
-                    <div class="footer-title">
-                        <h3>USEFUL LINKS</h3>
-                    </div>
-                    <div class="footer-list">
-                        <ul>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Support Policy</a></li>
-                            <li><a href="#">Size guide</a></li>
-                            <li><a href="#">FAQs</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="footer-widget mb-30 ml-75">
-                    <div class="footer-title">
-                        <h3>FOLLOW US</h3>
-                    </div>
-                    <div class="footer-list">
-                        <ul>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">Youtube</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="footer-widget mb-30 ml-70">
-                    <div class="footer-title">
-                        <h3>SUBSCRIBE</h3>
-                    </div>
-                    <div class="subscribe-style">
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <div id="mc_embed_signup" class="subscribe-form">
-                            <form id="mc-embedded-subscribe-form" class="validate" novalidate="" target="_blank" name="mc-embedded-subscribe-form" method="post" action="https://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef">
-                                <div id="mc_embed_signup_scroll" class="mc-form">
-                                    <input class="email" type="email" required="" placeholder="Enter your email here.." name="EMAIL" value="">
-                                    <div class="mc-news" aria-hidden="true">
-                                        <input type="text" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef">
-                                    </div>
-                                    <div class="clear">
-                                        <input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe" value="Subscribe">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <!-- Logo Section -->
+        <div style="flex: 1; text-align: left;">
+            <a href="#">
+                <img src="{{ asset('storage/' . $siteSettings['logo']->value) }}" 
+                     style="width: 210px; height: auto;"> <!-- Increased size by 40% -->
+            </a>
         </div>
+
+        <!-- Links Section -->
+        <div style="flex: 2; text-align: center;">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px;">
+                <li style="margin: 0;">
+                    <a href="{{ route('aboutus') }}" style="color: #333; text-decoration: none; font-size: 14px; font-weight: bold;">About Us</a>
+                </li>
+                <li style="margin: 0;">
+                    <a href="{{ route('products.shop') }}" style="color: #333; text-decoration: none; font-size: 14px; font-weight: bold;">Shop Now</a>
+                </li>
+                <li style="margin: 0;">
+                    <a href="{{ route('contact.form') }}" style="color: #333; text-decoration: none; font-size: 14px; font-weight: bold;">Contact</a>
+                </li>
+                <li style="margin: 0;">
+                    <a href="{{ route('order.status') }}"  style="color: #333; text-decoration: none; font-size: 14px; font-weight: bold;">Orders Tracking</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div style="flex: 1; text-align: right;">
+            <h4 style="margin: 5px 0 0; font-size: 14px; font-weight: bold; color: #333;">Mobile No:</h4>
+            <p style="margin: 0; font-size: 12px; color: #555;">
+                {{ $siteSettings['mobile_no']->value ?? 'No contact number available' }}
+            </p>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div style="margin-top: 0px; padding-top: 10px; text-align: center;">
+        <p style="font-size: 16px; color: #333; font-weight: bold; margin: 0;">
+            © {{ $siteSettings['copyright']->value ?? 'No details found' }}
+        </p>
+
+        <br>
     </div>
 </footer>

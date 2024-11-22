@@ -109,10 +109,7 @@ Route::put('/myaccount/update', 'MyaccountController@updateAccount')->name('myac
 
 
 
-// backend dashboard
-  
 
-Route::view('/dashboard', 'backend.index')->name('admin.dashboard')->middleware('admin'); 
 
 
 // admin logout
@@ -174,14 +171,19 @@ Route::delete('/users/{id}', 'UsersController@delete')->name('users.delete')->mi
 Route::get('/users{id}', 'UsersController@show')->name('users.show');
 
 
+// to display content data in dashboard index
+Route::get('/dashboard', [HomePageController::class, 'dashboard'])->name('admin.dashboard')->middleware('admin');
+
+
 // datadisplay in frontend index page
 
 // Route::get('/home', 'ProductsController@front')->name('home'); // Adjust as necessary
 
 
-Route::get('/home', 'HomePageController@index')->name('home');
+// Route::get('/home', 'HomePageController@index')->name('home');
 Route::get('/home', 'HomePageController@index')->name('home');
 Route::get('/shop', 'HomePageController@ProductsIndex')->name('products.shop');
+Route::get('/order/status', 'HomePageController@OrderStatus')->name('order.status');
 
 
 
@@ -207,7 +209,8 @@ Route::get('/carts{id}', 'CartController@showAdmin')->name('carts.show');
 
 // orders data dispaply in admin dashboard
 Route::get('/order/items','OrderController@index')->name('orders.index')->middleware('admin');
-Route::delete('/orders/{id}', 'OrderController@delete')->name('orders.delete')->middleware('admin');
+Route::delete('/orders/{orderId}', 'OrderController@delete')->name('orders.delete')->middleware('admin');
+
 
 
 // shipping details data dispaply in admin dashboard
@@ -238,7 +241,7 @@ Route::get('checkout/cancel', 'StripeController@cancel')->name('stripe.cancel');
 
 
 // for updating order_status
-Route::put('/orders/{orderStatus}/update', 'OrderController@updateStatus')->name('orders.updateStatus');
+Route::put('/orders/{orderStatus}/update', 'OrderController@updateStatus')->name('orders.updateStatus')->middleware('auth');
 
 
 // feedback 

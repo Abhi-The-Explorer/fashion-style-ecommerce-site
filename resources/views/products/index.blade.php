@@ -80,7 +80,7 @@
                                         <td>{{ $product->sku ?? 'not found'}}</td>
                                         <td>{{ $product->category ?? 'not found' }}</td>
                                        
-                                        <td>{{ $product->price ?? 'not found' }}</td>
+                                        <td> ₹{{ $product->price ?? 'not found' }}</td>
                                       
                                         <td>{{ $product->qty  ?? 'not found'}}</td>
                                         <td>{{ $product->description ?? 'not found'}}</td>

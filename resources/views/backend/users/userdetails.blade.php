@@ -200,7 +200,8 @@
                     </div>
                 </div>
             </div>
-        
+
+            <br><br>
 
                             <div style="flex: 1 1 100%; padding: 10px; margin-top:-70px;">
                                 <a href="{{ route('users.index') }}" class="btn btn-cancel">Cancel</a>

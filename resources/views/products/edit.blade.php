@@ -126,7 +126,7 @@
                             </div>
                             <div style="flex: 1 1 25%; padding: 10px;">
                                 <label>Price</label>
-                                <input type="text" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" name="price" value="{{ $product->price }}" required>
+                                <input type="text" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" name="price" value=" ₹{{ $product->price }}" required>
                             </div>
 
                             <!-- images -->

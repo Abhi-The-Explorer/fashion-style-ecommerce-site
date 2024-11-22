@@ -130,7 +130,7 @@ public function success()
                     'price' => $product->price,
                     'total_amount_per_product' => $totalAmountPerProduct,
                     'image' => $item->image,
-                    'order_id' => $orderId, // Use the same order ID for all items
+                    'order_id' => $orderId,
                 ]);
             }
         }
@@ -138,9 +138,12 @@ public function success()
         // Insert into the order_status table once after all order details are created
         OrderStatus::create([
             'order_id' => $orderId,
+            'user_id' => $user->id,
             'payment_status' => 'completed',
             'order_status' => 'pending',
         ]);
+
+       
     });
 
     // Send the email after successful transaction with the grand total

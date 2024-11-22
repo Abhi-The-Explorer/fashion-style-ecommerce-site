@@ -207,7 +207,7 @@ public function checkout(Request $request)
       public function indexAdmin()
       {
           // Paginate carts with their details
-          $carts = CartDetail::paginate(10);
+          $carts = CartDetail::paginate(100);
 
           // Pass the paginated users to the view
           return view('backend.carts.index', compact('carts'));

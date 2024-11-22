@@ -14,6 +14,7 @@ class OrderStatus extends Model
         'order_id',
         'payment_status',
         'order_status',
+        'user_id',
     ];
 
     // Define the relationship to the OrderDetail model

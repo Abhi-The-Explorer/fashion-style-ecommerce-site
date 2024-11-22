@@ -43,7 +43,7 @@
                         <thead>
                             <tr>
                                 <th>User Id</th>
-                                <th>Order Id</th>
+                                <!-- <th>Order Id</th> -->
                                 <th>Full Name</th>
                                 <th>Country </th>
                                 <th>Address Line</th>
@@ -66,7 +66,7 @@
                                 @foreach($shippingData as $shippingData) <!-- Use a different variable name to avoid confusion -->
                                     <tr>
                                         <td>{{ $shippingData->user_id ?? 'Not found' }}</td>
-                                        <td>{{ $shippingData->order_id ?? 'Not found' }}</td>
+                                        <!-- <td>{{ $shippingData->order_id ?? 'Not found' }}</td> -->
                                         <td>{{ $shippingData->full_name ?? 'Not found' }}</td>
                                         <td>{{ $shippingData->country ?? 'Not found' }}</td>
                                         <td>{{ $shippingData->address_line ?? 'Not found' }}</td>

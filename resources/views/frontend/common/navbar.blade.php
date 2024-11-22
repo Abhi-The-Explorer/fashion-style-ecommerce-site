@@ -28,7 +28,7 @@
                                 
                             <li><a href="{{route('cart.view')}}">Cart page</a></li>
                             
-                            <li><a href="{{route('order.view')}}">Order Status</a></li>
+                            <li><a href="{{ route('order.status') }}">Order Status</a></li>
                             
                             <!-- <li><a href="shop.blade.php">Collection</a></li> -->
                             <!-- <li><a href="#"> Pages <i class="fa fa-angle-down"></i></a>
@@ -98,7 +98,7 @@
                                 @else
                                     <!-- Optionally, display login link if the user is not logged in -->
                                     <a href="{{ route('login') }}">Login</a>
-                                    <a href="{{ route('register') }}">Register</a>
+                                    <a href="{{ route('user.register') }}">Register</a>
                                 @endif</a></li>
 
                                 <!-- <li><a href="{{route('login')}}">Login</a></li> -->

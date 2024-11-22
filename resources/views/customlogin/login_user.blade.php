@@ -92,6 +92,16 @@
                             </div>
                         @endif
 
+
+                        @if(session('message2'))
+                            <div class="alert alert-success">
+                                {{ session('message2') }}
+                                <button type="button" class="close-btn" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+
                         @if(session('message'))
                             <div class="alert alert-success">
                                 {{ session('message') }}

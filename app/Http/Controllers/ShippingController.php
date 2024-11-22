@@ -79,7 +79,7 @@ class ShippingController extends Controller
     public function indexAdmin()
     {
         // Paginate carts with their details
-        $shippingData = ShippingDetail::paginate(10);
+        $shippingData = ShippingDetail::paginate(100);
 
         // Pass the paginated users to the view
         return view('backend.orders.shipping_details', compact('shippingData'));

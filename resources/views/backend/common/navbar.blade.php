@@ -41,7 +41,7 @@
 <div class="header">
 
 <div class="header-left active">
-<a href="index.blade.php" class="logo">
+<a href="{{route('admin.dashboard')}}" class="logo">
 
 <img src="{{ asset('storage/' . $siteSettings['logo']->value) }}"  style="width: 150px; height: 130px; margin-top: -30px; margin-bottom: -30px;" >
 

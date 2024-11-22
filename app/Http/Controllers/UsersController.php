@@ -16,7 +16,7 @@ class UsersController extends Controller
     public function index()
     {
         // Paginate users with their details
-        $users = User::with('details')->paginate(10); // Adjust the number as needed
+        $users = User::with('details')->paginate(100); // Adjust the number as needed
     
         // Pass the paginated users to the view
         return view('backend.users.index', compact('users'));
